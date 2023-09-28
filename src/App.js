@@ -6,7 +6,6 @@ import Vehiculo from "./vehiculo";
 import NavBar from "./navbar";
 import { Container } from "react-bootstrap";
 
-
 function App() {
  return (
    <div className="App">

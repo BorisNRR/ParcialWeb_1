@@ -46,9 +46,7 @@ function Login(){
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Enter password"
                         onChange={handlePasswordChange} value={formValues.password}/>
-                    </Form.Group>
-
-                    
+                    </Form.Group>                    
 
                 </Col>
             </Row>
