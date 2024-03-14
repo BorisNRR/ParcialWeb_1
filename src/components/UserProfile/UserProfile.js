@@ -16,14 +16,14 @@ export function UserProfile(){
     }
 
     const handleSubmitButton = ((e) =>{
-        if((userData.email && userData.email.includes("@")) && (userData.password && userData.password.length >=8)){
+
+        if(true){
             e.preventDefault()
             navigate("/Home")}
         else{
             alert("Todos los campos son obligatorios. Revise que su entrada cumple con los criterios.")
         }
     })
-
 
     return(
         <div className="container"> 
@@ -32,42 +32,47 @@ export function UserProfile(){
 
         <Form>
 
-            <Form.Group className="mb-6" controlId="formEmail">
-                <Form.Label>Email address</Form.Label>
+            <Form.Group className="mb-6" controlId="username">
+                <Form.Label>Nombre de usuario</Form.Label>
                 <Form.Control 
-                    type="email" 
-                    placeholder="Email" 
-                    onChange={(e)=> setFields('email', e.target.value)}
-                    value={userData.email}
+                    type="text" 
+                    placeholder="Username" 
+                    onChange={(e)=> setFields('username', e.target.value)}
+                    value={userData.username}
                 />
-                <Form.Text className="text-muted">Your email must include @</Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-6" controlId="formPassword">
-                <Form.Label>Password</Form.Label>
+            <Form.Group className="mb-6" controlId="fullname">
+                <Form.Label>Nombre completo</Form.Label>
                 <Form.Control 
-                    type="password" 
-                    placeholder="Password" 
-                    onChange={(e) => setFields('password', e.target.value)} 
-                    value={userData.password}
+                    type="text" 
+                    placeholder="Nombre completo" 
+                    onChange={(e)=> setFields('fullname', e.target.value)}
+                    value={userData.fullname}
                 />
-                <Form.Text className="text-muted">Your password must be at least 8 characteres</Form.Text>
             </Form.Group>
 
-            <a href="https://www.google.com/"> Forgot password? </a>
+            <Form.Group className="mb-6" controlId="description">
+                <Form.Label>Descripción del perfil</Form.Label>
+                <Form.Control 
+                    type="text" 
+                    placeholder="Descripción del perfil" 
+                    onChange={(e)=> setFields('description', e.target.value)}
+                    value={userData.description}
+                />
+            </Form.Group>
 
-            <Row>
-                <Col>
-                    <Button onClick={handleSubmitButton}>
-                        Submit
-                    </Button>
-                </Col>
-                <Col>
-                    <Button onClick={console.log("Proximamente")}>
-                        Register
-                    </Button>
-                </Col>
-            </Row>
+            <Form.Group className="mb-6" controlId="URL">
+                <Form.Label>URL pagina personal</Form.Label>
+                <Form.Control 
+                    type="text" 
+                    placeholder="URL pagina personal" 
+                    onChange={(e)=> setFields('URL', e.target.value)}
+                    value={userData.URL}
+                />
+            </Form.Group>
+
+            <Button>Guardar Cambios</Button>
             
         </Form>
         
