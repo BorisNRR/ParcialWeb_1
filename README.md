@@ -18,3 +18,7 @@ En el primer Release se tiene la implementación de los componentes Home, el cua
 No obstante, no se logra consumir de manera adecuada datos .json desde github y no se genera de manera adecuada el routing en la aplicación.
 
 Otro error, dentro del código del componente Home se implementó un botón para ver el detalle del perfil del usuario donde se añade el código _onClick={navigate("/UserProfile")}_ esto hace que se renderice directamente la vista de UserProfile al ejecutar el proyecto. Eliminando esta parte se visualiza la estructura de la vista Home.
+
+## Segundo Release:
+
+Para el segundo Release se implementa internacionalización de los textos estáticos de la aplicación.  Se crean dos archivos JSON, dentro de la carpeta locales, uno para los respectivos valores a español y otro en inglés. Se modifica index.js para ejecutar bajo el marco de IntlProvider.
