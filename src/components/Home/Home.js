@@ -6,25 +6,21 @@ import "./Home.css"
 export function Home(){
     
     const [userData, setUserData] = useState({})
-    const [userPhotos, setUserPhotos] = useState({})
+    const [selectedUserId, setSelectedUserId] = useState(10)
     
     const navigate = useNavigate()
     const navigateToUserPRofile = () => {
         navigate("/UserProfile")
     }
 
-    useEffect(() =>{
-        const URL = "https://picsum.photos/350"
-        fetch(URL).then(data => data.json()).then(data => {
-            setUserPhotos(data.results)
-        })},[])
-
-    useEffect(() =>{
+    useEffect(()=>{
         const URL = "https://raw.githubusercontent.com/BorisNRR/ParcialWeb_1/main/src/data.json"
-        fetch(URL).then(data => data.json()).then(data => {
-            setUserData(data.results)
-        })},[])
-
+        fetch(URL).then((data) => data.json())
+                  .then((data) => (
+                    setUserData(data[selectedUserId-1])
+        ))
+    }, [selectedUserId])
+    
     const getImageGrid = () => {
         if (window.innerWidth > 800) {
           const images = [];
@@ -111,7 +107,7 @@ export function Home(){
                     <p>UserA UserB dasshdsdfghjgfds</p>
                     <p><a href="https://www.google.com/">www.website.com</a></p>
                 </Row>
-                <Row><p>{} posts {} followers {} following</p></Row>
+                <Row><p>{userData.posts} posts {userData.followers} followers {userData.following} following</p></Row>
             </Col>
         </Row>
         <Row>
