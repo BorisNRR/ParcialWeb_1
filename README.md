@@ -16,3 +16,5 @@ En primera instancia, se debe contar con la instalación de Node.js en el equipo
 En el primer Release se tiene la implementación de los componentes Home, el cual corresponde a la página que reciba al usuario. UserProfile, que contiene el detalle del usuario al dar click en su foto de perfil (/UserProfile en la URL), y se inicializa PostDetail, componente que contendrá el detalle de una publicación hecha por el usuario.
 
 No obstante, no se logra consumir de manera adecuada datos .json desde github y no se genera de manera adecuada el routing en la aplicación.
+
+Otro error, dentro del código del componente Home se implementó un botón para ver el detalle del perfil del usuario donde se añade el código _onClick={navigate("/UserProfile")}_ esto hace que se renderice directamente la vista de UserProfile al ejecutar el proyecto. Eliminando esta parte se visualiza la estructura de la vista Home.

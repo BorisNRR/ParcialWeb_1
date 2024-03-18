@@ -1,5 +1,5 @@
 export function PostDetail(){
-    
-    return()
-    
+    return(
+        null
+    )
 }

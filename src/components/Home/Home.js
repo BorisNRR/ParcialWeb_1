@@ -2,11 +2,15 @@ import { Row, Col, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function Home(props){
+export function Home(){
     
     const [userData, setUserData] = useState({})
     const [userPhotos, setUserPhotos] = useState({})
+    
     const navigate = useNavigate()
+    const navigateToUserPRofile = () => {
+        navigate("/UserProfile")
+    }
 
     useEffect(() =>{
         const URL = "https://picsum.photos/350"
@@ -25,8 +29,9 @@ export function Home(props){
     <div className="container">
         <Row>
             <Col>
-            <img src={"https://picsum.photos/350"} alt="Profile Photo"></img>
-            <Button onClick={navigate("/UserProfile")}> See Detail </Button>
+                <a onClick={navigateToUserPRofile}>
+                    <img src={"https://picsum.photos/350"} alt="Profile Photo"></img>
+                </a>
             </Col>
             <Col>
                 <Row>
