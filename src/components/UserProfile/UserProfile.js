@@ -1,6 +1,7 @@
 import { Button, Form, Row, Col } from "react-bootstrap"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { FormattedMessage } from "react-intl"
 
 export function UserProfile(){
 
@@ -27,13 +28,13 @@ export function UserProfile(){
 
     return(
         <div className="container"> 
-        <h1>LogIn</h1>
+        <h1><FormattedMessage id="Title"/></h1>
         <Row className="justify-content-md-center">
 
         <Form>
 
             <Form.Group className="mb-6" controlId="username">
-                <Form.Label>Nombre de usuario</Form.Label>
+                <FormattedMessage id="Username"/>
                 <Form.Control 
                     type="text" 
                     placeholder="Username" 
@@ -43,7 +44,7 @@ export function UserProfile(){
             </Form.Group>
 
             <Form.Group className="mb-6" controlId="fullname">
-                <Form.Label>Nombre completo</Form.Label>
+                <FormattedMessage id="CompeteName"/>
                 <Form.Control 
                     type="text" 
                     placeholder="Nombre completo" 
@@ -53,7 +54,7 @@ export function UserProfile(){
             </Form.Group>
 
             <Form.Group className="mb-6" controlId="description">
-                <Form.Label>Descripción del perfil</Form.Label>
+                <FormattedMessage id="Description"/>
                 <Form.Control 
                     type="text" 
                     placeholder="Descripción del perfil" 
@@ -63,7 +64,7 @@ export function UserProfile(){
             </Form.Group>
 
             <Form.Group className="mb-6" controlId="URL">
-                <Form.Label>URL pagina personal</Form.Label>
+                <FormattedMessage id="Website"/>
                 <Form.Control 
                     type="text" 
                     placeholder="URL pagina personal" 
@@ -72,7 +73,7 @@ export function UserProfile(){
                 />
             </Form.Group>
 
-            <Button>Guardar Cambios</Button>
+            <Button><FormattedMessage id="Save"/></Button>
             
         </Form>
         

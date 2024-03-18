@@ -2,6 +2,7 @@ import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css"
+import { FormattedMessage } from "react-intl";
 
 export function Home(){
     
@@ -102,12 +103,13 @@ export function Home(){
             <Col>
                 <Row>
                     <h4>Username</h4>
+                    <FormattedMessage id="Username"/> {userData.username}
                 </Row>
                 <Row>
-                    <p>UserA UserB dasshdsdfghjgfds</p>
+                    <p>{userData.first_name} {userData.last_name} {userData.shortDescription}</p>
                     <p><a href="https://www.google.com/">www.website.com</a></p>
                 </Row>
-                <Row><p>{userData.posts} posts {userData.followers} followers {userData.following} following</p></Row>
+                <Row><p>{userData.posts} <FormattedMessage id="Posts"/> {userData.followers} <FormattedMessage id="Followers"/> {userData.following} <FormattedMessage id="Following"/></p></Row>
             </Col>
         </Row>
         <Row>
